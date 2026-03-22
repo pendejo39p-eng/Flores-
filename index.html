@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Para mi niña linda</title>
+    <style>
+        body { background: #fff5f8; text-align: center; font-family: sans-serif; padding-top: 50px; }
+        .corazon { color: #ff4081; font-size: 50px; animation: latido 1s infinite; }
+        .flor { font-size: 80px; }
+        .mensaje { color: #d81b60; font-size: 20px; margin: 20px; }
+        #contador { font-weight: bold; color: #555; font-size: 18px; }
+        @keyframes latido { 0% {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);} }
+    </style>
+</head>
+<body>
+    <div class="corazon">❤️</div>
+    <div class="mensaje">
+        <h1>Flores amarillas para mi novia hermosa</h1>
+        <p>Aunque estemos lejos, mi amor por ti crece cada segundo</p>
+    </div>
+    <div class="flor">🌻✨</div>
+    <div id="contador">Calculando nuestro tiempo...</div>
+
+    <script>
+        function tiempoJuntos() {
+            // AQUÍ PUSE LA FECHA DE SU PRIMER MES: 21 DE FEBRERO 2026
+            const inicio = new Date('2026-02-21T00:00:00'); 
+            const ahora = new Date();
+            const diff = ahora - inicio;
+
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diff / (1000 * 60)) % 60);
+            const segs = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('contador').innerHTML = 
+                `Llevamos juntos:<br>${dias} días, ${horas}h, ${minutos}m y ${segs}s`;
+        }
+        setInterval(tiempoJuntos, 1000);
+    </script>
+</body>
+</html>
